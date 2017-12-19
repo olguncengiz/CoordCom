@@ -1,0 +1,120 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/google-youtube/google-youtube.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view2">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+      youtube-video {
+        display: inline-block;
+      }
+
+      div.card {
+        background-color: DimGray;
+      }
+    </style>
+
+    <div class="card">
+      <!--<div class="circle">2</div>-->
+    <div class="ebLayout-SectionHeading">
+        <h2>Video Feeds</h2>
+    </div>      
+
+<table class="ebTable"> 
+    <thead> 
+        <tr> 
+            <th>Accident Reported</th> 
+        </tr> 
+    </thead> 
+    <tbody> 
+        <tr> 
+            <td>CAM1 - Event Replay</td> 
+            <td>date</td> 
+            <td>Details</td> 
+            <td>Details</td> 
+        </tr>
+        <tr>
+          <td>
+            <video width="320" height="240" controls autoplay loop>
+            <source src="../videos/Accident.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+          </td>
+        </tr>
+
+        <tr> 
+            <td>CAM2 - Event Replay</td> 
+            <td>date</td> 
+            <td>Details</td> 
+            <td>Details</td> 
+        </tr>
+        <tr>
+          <td>
+            <video width="320" height="240" controls autoplay loop>
+            <source src="../videos/Accident2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video> 
+          </td>
+        </tr>
+        <tr> 
+            <td>CAM1 - Live View</td> 
+            <td>date</td> 
+            <td>Details</td> 
+            <td>Details</td> 
+        </tr>
+        <tr>
+          <td>
+            <video width="320" height="240" autoplay loop>
+            <source src="../videos/Accident_Angle1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+          </td>
+        </tr>
+
+        <tr> 
+            <td>CAM2 - Live View</td> 
+            <td>date</td> 
+            <td>Details</td> 
+            <td>Details</td> 
+        </tr>
+        <tr>
+          <td>
+            <video width="320" height="240" autoplay loop>
+            <source src="../videos/Accident_Angle2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video> 
+          </td>
+        </tr>
+
+    </tbody> 
+</table>
+
+
+
+
+
+      <p></p>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-view2'
+    });
+  </script>
+</dom-module>

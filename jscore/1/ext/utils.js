@@ -1,0 +1,3 @@
+/* Copyright (c) Ericsson 2016 */
+
+define("jscore/ext/utils",[],function(){return{clone:function(r,n){var t=function(r,n){if(Array.isArray(r))r.forEach(function(r,t){n(t)});else if("object"==typeof r)for(var t in r)n(t)},e=function(r){var o=Array.isArray(r)?[]:{};return t(r,function(t){var i=r[t];n&&(Array.isArray(i)||"object"==typeof i)?o[t]=e(i):o[t]=i}),o};return e(r)},extend:function(r,n,t){for(var e in n){var o=n[e];t?"object"!=typeof o||Array.isArray(o)?r[e]=o:(("object"!=typeof r[e]||Array.isArray(r[e]))&&(r[e]={}),this.extend(r[e],o,t)):r[e]=o}}}});

@@ -1,0 +1,150 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/google-map/google-map.html">
+<link rel="import" href="../bower_components/google-map/google-map-marker.html">
+<link rel="import" href="../bower_components/google-map/google-map-poly.html">
+<link rel="import" href="../bower_components/google-map/google-map-directions.html"> 
+<link rel="import" href="shared-styles.html">
+<style>
+  /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+  #map {
+    height: 100%;
+  }
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<dom-module id="icon-toggle">
+  <template>
+    <style>
+      /* local DOM styles go here */
+      :host {
+        display: inline-block;
+      }
+      iron-icon {
+        fill: rgba(0,0,0,0);
+        stroke: currentcolor;
+      }
+      :host([pressed]) iron-icon {
+        fill: currentcolor;
+      }
+    </style>
+    <!-- local DOM goes here -->
+    <iron-icon icon="polymer">
+    </iron-icon>
+  </template>
+  <script>
+  Polymer({
+    is: 'icon-toggle',
+  });
+  </script>
+</dom-module>
+
+<dom-module id="my-view1">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+
+      div.card {
+        background-color: DimGray;
+      }
+    </style>
+      
+    <div class="card">
+      <!--<div class="circle">1</div>-->
+      <div class="ebLayout-SectionHeading">
+        <h2>Map View</h2>
+      </div>
+
+      <label>
+        <img src="../images/map_police.png">
+        <input class='ebCheckbox' type='checkbox' onclick='handleClick(this);' id='police'>
+        <span class="ebCheckbox-inputStatus"></span>
+        <span class="ebCheckbox-label">Police</span>
+      </label>
+
+      <label>
+        <img src="../images/map_ambulance.png">
+        <input class='ebCheckbox' type='checkbox' onclick='handleClick(this);' id='ambulance'>
+        <span class="ebCheckbox-inputStatus"></span>
+        <span class="ebCheckbox-label">Ambulance</span>
+      </label>
+
+      <label>
+        <img src="../images/map_camera.png">
+        <input class='ebCheckbox' type='checkbox' onclick='handleClick(this);' id='camera'>
+        <span class="ebCheckbox-inputStatus"></span>
+        <span class="ebCheckbox-label">Surveillance Camera</span>
+      </label>
+
+      <label>
+        <img src="../images/map_ship.png">
+        <input class='ebCheckbox' type='checkbox' onclick='handleClick(this);' id='patrol'>
+        <span class="ebCheckbox-inputStatus"></span>
+        <span class="ebCheckbox-label">Surveillance Vehicle</span>        
+      </label>
+      
+      <label>
+        <img src="../images/map_building.png">
+        <input class='ebCheckbox' type='checkbox' onclick='handleClick(this);' id='building'>
+        <span class="ebCheckbox-inputStatus"></span>
+        <span class="ebCheckbox-label">Building</span>   
+      </label>
+
+      <label>
+        <img src="../images/map_call.png">
+        <input class='ebCheckbox' type='checkbox' onclick='handleClick(this);' id='call'>
+        <span class="ebCheckbox-inputStatus"></span>
+        <span class="ebCheckbox-label">Emergency Call</span>   
+      </label>
+
+      <label>
+        <input class='ebCheckbox' type='checkbox' onclick='handleBorder(this);' id='border'>
+        <span class="ebCheckbox-inputStatus"></span>
+        <span class="ebCheckbox-label">Border</span>   
+      </label>
+
+      <google-map 
+        latitude="38.372397" 
+        map-type="hybrid"
+        longitude="27.198719" 
+        zoom="11"
+        api-key="AIzaSyD3E1D9b-Z7ekrT3tbhl_dy8DCXuIuDDRc"
+        map="{{map}}">
+      </google-map>
+
+      <google-map-directions 
+        travel-mode="DRIVING"
+        renderer-options='{"suppressMarkers": true, "draggable": false, "polylineOptions": {"strokeOpacity": 0.5, "draggable": false, "strokeColor": "#FF0000"}}'
+        api-key="AIzaSyD3E1D9b-Z7ekrT3tbhl_dy8DCXuIuDDRc" map="{{map}}">
+      </google-map-directions>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-view1'
+    });
+  </script>
+  <script type="text/javascript" src="../assets/js/d3.v3.min.js"></script>
+  <script type="text/javascript" src="../assets/js/map_markers.js"></script>
+</dom-module>

@@ -1,0 +1,211 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/google-chart/google-chart.html">
+<link rel="import" href="../bower_components/google-map/google-map.html">
+  <link rel="import" href="../bower_components/google-map/google-map-marker.html">
+  <link rel="import" href="../bower_components/google-map/google-map-poly.html">
+  <link rel="import" href="../bower_components/google-map/google-map-directions.html"> 
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view4">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+      div.card {
+        background-color: DimGray;
+      }
+    </style>
+
+    <div class="card">
+      <!--<div class="circle">4</div>-->
+      <div class="ebLayout-SectionHeading">
+          <h2>Object View</h2>
+      </div>
+      <i class="fa fa-ambulance fa-4x" style="color:WHITESMOKE;" aria-hidden="true"></i>
+      <p><h3>Ambulance</h3></p>
+      <!--<img src="../images/ambulance_icon.png" width="50%" height="50%">-->
+      <p>
+      
+
+
+
+    <div class="panel-group" id="accordion_" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne_">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion_" href="#collapseOne_" aria-expanded="false" aria-controls="collapseOne_">
+            Ambulance Staff
+          </a>
+        </h4>
+      </div>
+      <div id="collapseOne_" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne_">
+
+
+        <div class="panel-body">
+              <table class="ebTable"> 
+              <tbody>
+                  <tr>
+                      <td><i class="fa fa-id-card-o fa-3x" aria-hidden="true"></i></td>
+                  </tr> 
+                  <tr> 
+                      <td><b>1. Driver</b></td> 
+                      <td>Henry Ford</td> 
+                      <td>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Trainings</button>
+                        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                          <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                              ...
+                            </div>
+                          </div>
+                        </div>
+
+                      </td>
+                  </tr>
+                  <tr>
+                    <td><b>2. First Responder</b></td>
+                    <td>Lisa Lorens</td>
+                  </tr>
+
+                  <tr>
+                    <td><b>3. Care Assistant</b></td>
+                    <td>Sarah Care</td>
+                  </tr>
+
+                  <tr>
+                    <td><b>4. Paramedic</b></td>
+                    <td>Maria Medic</td>
+                  </tr>                  
+
+              </tbody> 
+          </table>
+
+
+
+
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo_">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_" href="#collapseTwo_" aria-expanded="false" aria-controls="collapseTwo_">
+            Vehicle
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo_" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_">
+        <div class="panel-body">
+
+
+            <table class="ebTable"> 
+              <tbody>
+                  <tr>
+                      <td><i class="fa fa-ambulance fa-3x" aria-hidden="true"></i></td>
+                  </tr> 
+                  <tr> 
+                    <td><i class="fa fa-tachometer fa-fw" aria-hidden="true"></i><b>&nbsp; Speed</b></td>
+                    <td><div class='txtSpeed'></div></td> 
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-battery fa-fw" aria-hidden="true"></i><b>&nbsp; Battery Level</b></td>
+                    <td>89%</td>
+                  </tr>
+
+                  <tr>
+                    <td><i class="fa fa-thermometer fa-fw" aria-hidden="true"></i><b>&nbsp; Oil Level</b></td>
+                    <td>95%</td>
+                  </tr>
+
+                  <tr>
+                    <td><i class="fa fa-bar-chart fa-fw" aria-hidden="true"></i><b>&nbsp; Tire Pressure</b></td>
+                    <td>Front Left: 35 <br>Front Right: 34 <br>Rear Left: 32 <br>Rear Right: 32</td>
+                  </tr>
+
+                  <tr>
+                    <td><i class="fa fa-wrench fa-fw" aria-hidden="true"></i><b>&nbsp; Last Maintanance</b></td>
+                    <td>2016.11.20</td>
+                  </tr>                     
+
+              </tbody> 
+          </table>
+          <!--
+          <google-chart
+            type='gauge'
+            cols='[{"label":"Speed", "type":"string"}, {"label":"Fuel", "type":"number"}]'
+            rows='[["Speed", 65],["Fuel", 62]]'>
+          </google-chart>
+          -->
+
+
+        </div>
+      </div>
+    </div>
+
+     <!--
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Collapsible Group Item #3
+          </a>
+        </h4>
+      </div>
+
+     
+      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        </div>
+      </div>
+      -->
+    </div>
+  </div>
+
+      
+
+<div class="btn-group">
+  <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> Actions</a>
+  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    <span class="fa fa-caret-down" title="Toggle dropdown menu"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <li><a href="#"><i class="fa fa-taxi fa-fw"></i> Notify Police</a></li>
+    <li><a href="#"><i class="fa fa-ambulance fa-fw"></i> Notify Ambulance</a></li>
+    <li><a href="#"><i class="fa fa-fire fa-fw"></i> Notify Fire Department</a></li>
+    <li class="divider"></li>
+    <li><a href="#"><i class="fa fa-ban"></i> Cancel Notifications</a></li>
+  </ul>
+</div>
+
+      </p>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-view4'
+    });
+  </script>
+  <script type="text/javascript" src="../assets/js/map_markers.js"></script>
+  <script>
+    setInterval(DecimalGenerate, 3000);
+
+    $( document ).ready(function() {
+      DecimalGenerate();
+      });
+  </script>
+</dom-module>
